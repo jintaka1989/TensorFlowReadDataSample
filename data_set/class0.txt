@@ -1,0 +1,2 @@
+/home/ya65857/tensorflow/study/ReadData/data_set/class0/test.jpeg 0
+/home/ya65857/tensorflow/study/ReadData/data_set/class0/dilation.jpeg 0

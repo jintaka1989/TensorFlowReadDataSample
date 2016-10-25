@@ -14,8 +14,3 @@ from image_data_set import ImageDataSet
 if __name__ == "__main__":
     dataset = ImageDataSet()
     print dataset.image
-    ImageDataSet.create_labels("/home/ya65857/tensorflow/study/ReadData/test_data_set/class0", 0)
-    ImageDataSet.create_labels("/home/ya65857/tensorflow/study/ReadData/test_data_set/class1", 1)
-    ImageDataSet.create_labels("/home/ya65857/tensorflow/study/ReadData/test_data_set/class2", 2)
-    ImageDataSet.create_labels("/home/ya65857/tensorflow/study/ReadData/test_data_set/class3", 3)
-    ImageDataSet.create_labels("/home/ya65857/tensorflow/study/ReadData/test_data_set/class4", 4)

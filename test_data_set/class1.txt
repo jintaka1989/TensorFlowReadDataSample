@@ -1,7 +1,0 @@
-/home/ya65857/tensorflow/study/ReadData/test_data_set/class1/test001 (6th copy).jpeg 1
-/home/ya65857/tensorflow/study/ReadData/test_data_set/class1/test001 (4th copy).jpeg 1
-/home/ya65857/tensorflow/study/ReadData/test_data_set/class1/test001 (5th copy).jpeg 1
-/home/ya65857/tensorflow/study/ReadData/test_data_set/class1/test001 (copy).jpeg 1
-/home/ya65857/tensorflow/study/ReadData/test_data_set/class1/test001 (3rd copy).jpeg 1
-/home/ya65857/tensorflow/study/ReadData/test_data_set/class1/test001 (another copy).jpeg 1
-/home/ya65857/tensorflow/study/ReadData/test_data_set/class1/test001.jpeg 1

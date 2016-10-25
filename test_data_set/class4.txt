@@ -1,8 +1,0 @@
-/home/ya65857/tensorflow/study/ReadData/test_data_set/class4/test004 (another copy).jpeg 4
-/home/ya65857/tensorflow/study/ReadData/test_data_set/class4/test004 (4th copy).jpeg 4
-/home/ya65857/tensorflow/study/ReadData/test_data_set/class4/test004 (6th copy).jpeg 4
-/home/ya65857/tensorflow/study/ReadData/test_data_set/class4/test004 (3rd copy).jpeg 4
-/home/ya65857/tensorflow/study/ReadData/test_data_set/class4/test004 (7th copy).jpeg 4
-/home/ya65857/tensorflow/study/ReadData/test_data_set/class4/test004.jpeg 4
-/home/ya65857/tensorflow/study/ReadData/test_data_set/class4/test004 (copy).jpeg 4
-/home/ya65857/tensorflow/study/ReadData/test_data_set/class4/test004 (5th copy).jpeg 4

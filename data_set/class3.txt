@@ -1,0 +1,2 @@
+/home/ya65857/tensorflow/study/ReadData/data_set/class3/test003.jpeg 3
+/home/ya65857/tensorflow/study/ReadData/data_set/class3/test002.jpeg 3
