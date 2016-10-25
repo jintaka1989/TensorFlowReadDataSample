@@ -1,3 +1,5 @@
+Using these, You can create your own image data set for TensorFlow.
+
 ■data_set
   −train.txt
     ・you have to write the location path of train data_set in this
