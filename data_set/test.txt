@@ -1,0 +1,4 @@
+data_set/test001.jpeg 0
+data_set/test002.jpeg 1
+data_set/test003.jpeg 2
+data_set/test004.jpeg 3
