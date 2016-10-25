@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import os
+import glob
 import sys
 import cv2
 import numpy as np
@@ -43,3 +45,25 @@ class ImageDataSet:
             self.train_image = np.asarray(self.train_image)
             self.train_label = np.asarray(self.train_label)
             self.train_len = len(self.train_image)
+
+    @staticmethod
+    def create_labels(filepath, class_num):
+        files = glob.glob(filepath + "/*")
+        f = open(os.path.dirname(filepath) + "/class" + str(class_num) + ".txt", "w")
+        for file in files:
+            f.write(file + " " + str(class_num) + "\n")
+
+        f.close()
+
+    @staticmethod
+    def append_labels(filepath, class_num):
+        files = glob.glob(filepath + "/*")
+        f = open(os.path.dirname(filepath) + "/class" + str(class_num) + ".txt", "a")
+        for file in files:
+            f.write(file + " " + str(class_num) + "\n")
+
+        f.close()
+
+    # @staticmethod
+    # def cat_labels(filepath1, filepath2):
+    #     # use cat command

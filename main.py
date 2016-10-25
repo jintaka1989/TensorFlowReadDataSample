@@ -13,10 +13,9 @@ from image_data_set import ImageDataSet
 
 if __name__ == "__main__":
     dataset = ImageDataSet()
-    print dataset.image[0]
-    cv2.imshow(str(dataset.train_label[0]),dataset.image[0])
-    cv2.imshow(str(dataset.train_label[1]),dataset.image[1])
-    cv2.imshow(str(dataset.train_label[2]),dataset.image[2])
-    cv2.imshow(str(dataset.train_label[3]),dataset.image[3])
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    print dataset.image
+    ImageDataSet.create_labels("/home/ya65857/tensorflow/study/ReadData/test_data_set/class0", 0)
+    ImageDataSet.create_labels("/home/ya65857/tensorflow/study/ReadData/test_data_set/class1", 1)
+    ImageDataSet.create_labels("/home/ya65857/tensorflow/study/ReadData/test_data_set/class2", 2)
+    ImageDataSet.create_labels("/home/ya65857/tensorflow/study/ReadData/test_data_set/class3", 3)
+    ImageDataSet.create_labels("/home/ya65857/tensorflow/study/ReadData/test_data_set/class4", 4)
