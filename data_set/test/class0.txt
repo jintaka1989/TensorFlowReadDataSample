@@ -1,0 +1,10 @@
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class0/th_4.jpg 0
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class0/th_3.jpg 0
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class0/search_3.jpg 0
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class0/th_5.jpg 0
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class0/search_2.jpg 0
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class0/search_4.jpg 0
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class0/th_2.jpg 0
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class0/search.jpg 0
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class0/search_5.jpg 0
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class0/th.jpg 0

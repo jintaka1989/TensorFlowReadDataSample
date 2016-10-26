@@ -20,3 +20,10 @@ data_set/test004.jpeg 3
 
 ■use_model.py
   To run this, you can test "models/model.ckpt"(Using test data_set).
+
+■create_data_set.py
+cat class0.txt class1.txt class2.txt class3.txt class4.txt > train.txt
+cat class0.txt class1.txt class2.txt class3.txt class4.txt > test.txt
+
+you can't use " " in jpg filename
+sudo rename "s/ /_/g" *.jpg

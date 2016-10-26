@@ -8,7 +8,7 @@ import tensorflow as tf
 import tensorflow.python.platform
 
 # 画像を分類するときの分類数
-NUM_CLASSES = 4
+NUM_CLASSES = 5
 IMAGE_SIZE = 28
 # カラー画像だから*3？
 IMAGE_PIXELS = IMAGE_SIZE*IMAGE_SIZE*3
