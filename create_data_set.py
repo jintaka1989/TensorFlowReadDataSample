@@ -1,5 +1,6 @@
 import sys
 import os
+import commands as cmd
 import cv2
 import numpy as np
 import tensorflow as tf
@@ -12,17 +13,9 @@ from PyQt4.QtGui import *
 from scipy import ndimage
 from image_data_set import ImageDataSet
 
+NUM_CLASSES = 6
+
 if __name__ == "__main__":
     app_root_path = os.getcwd() + "/"
-    ImageDataSet.create_labels(app_root_path + "data_set/train/class0", 0)
-    ImageDataSet.create_labels(app_root_path + "data_set/train/class1", 1)
-    ImageDataSet.create_labels(app_root_path + "data_set/train/class2", 2)
-    ImageDataSet.create_labels(app_root_path + "data_set/train/class3", 3)
-    ImageDataSet.create_labels(app_root_path + "data_set/train/class4", 4)
-    ImageDataSet.create_labels(app_root_path + "data_set/train/class5", 5)
-    ImageDataSet.create_labels(app_root_path + "data_set/test/class0", 0)
-    ImageDataSet.create_labels(app_root_path + "data_set/test/class1", 1)
-    ImageDataSet.create_labels(app_root_path + "data_set/test/class2", 2)
-    ImageDataSet.create_labels(app_root_path + "data_set/test/class3", 3)
-    ImageDataSet.create_labels(app_root_path + "data_set/test/class4", 4)
-    ImageDataSet.create_labels(app_root_path + "data_set/test/class5", 5)
+    ImageDataSet.create_train_labels(app_root_path, NUM_CLASSES)
+    ImageDataSet.create_test_labels(app_root_path, NUM_CLASSES)

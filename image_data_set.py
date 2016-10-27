@@ -8,7 +8,7 @@ import tensorflow as tf
 import tensorflow.python.platform
 
 # 画像を分類するときの分類数
-NUM_CLASSES = 5
+NUM_CLASSES = 6
 IMAGE_SIZE = 28
 # カラー画像だから*3？
 IMAGE_PIXELS = IMAGE_SIZE*IMAGE_SIZE*3
@@ -63,6 +63,17 @@ class ImageDataSet:
             f.write(file + " " + str(class_num) + "\n")
 
         f.close()
+
+    @staticmethod
+    def create_train_labels(app_root_path, num_of_classes):
+        for num in range(0, num_of_classes):
+            ImageDataSet.create_labels(app_root_path + "data_set/train/class" + str(num), num)
+
+    @staticmethod
+    def create_test_labels(app_root_path, num_of_classes):
+        for num in range(0, num_of_classes):
+            ImageDataSet.create_labels(app_root_path + "data_set/test/class" + str(num), num)
+
 
     # @staticmethod
     # def cat_labels(filepath1, filepath2):
