@@ -16,7 +16,8 @@ from image_data_set import ImageDataSet
 NUM_CLASSES = 6
 
 if __name__ == "__main__":
-    result=cmd.getstatusoutput("touch test.txt")
+    # result=cmd.getstatusoutput("touch test.txt")
     app_root_path = os.getcwd() + "/"
     ImageDataSet.create_train_labels(app_root_path, NUM_CLASSES)
     ImageDataSet.create_test_labels(app_root_path, NUM_CLASSES)
+    #TODO:この後テキストファイルの統合処理を書く、ファイルはそれぞれapp_root_pathを利用して絶対パスで書く
