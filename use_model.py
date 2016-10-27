@@ -7,13 +7,20 @@ import cv2
 import tensorflow.python.platform
 from types import *
 
-NUM_CLASSES = 4
+NUM_CLASSES = 5
 IMAGE_SIZE = 28
 IMAGE_PIXELS = IMAGE_SIZE*IMAGE_SIZE*3
 
 flags = tf.app.flags
 FLAGS = flags.FLAGS
 flags.DEFINE_string('readmodels', 'models/model.ckpt', 'File name of model data')
+flags.DEFINE_string('train', 'data_set/train.txt', 'File name of train data')
+flags.DEFINE_string('test', 'data_set/test.txt', 'File name of test data')
+flags.DEFINE_string('train_dir', '/tmp/pict_data', 'Directory to put the data_set data.')
+flags.DEFINE_integer('max_steps', 201, 'Number of steps to run trainer.')
+flags.DEFINE_integer('batch_size', 256, 'Batch size'
+                     'Must divide evenly into the dataset sizes.')
+flags.DEFINE_float('learning_rate', 1e-4, 'Initial learning rate.')
 
 def inference(images_placeholder, keep_prob):
     def weight_variable(shape):
@@ -66,13 +73,24 @@ def inference(images_placeholder, keep_prob):
     return y_conv
 
 if __name__ == '__main__':
-    test_image = []
-    for i in range(1, len(sys.argv)):
-        img = cv2.imread(sys.argv[i])
-        print img
-        img = cv2.resize(img, (IMAGE_SIZE, IMAGE_SIZE))
-        test_image.append(img.flatten().astype(np.float32)/255.0)
-    test_image = np.asarray(test_image)
+
+    with open(FLAGS.test, 'r') as f: # test.txt
+        test_image = []
+        test_label = []
+        test_image_name = []
+        for line in f:
+            line = line.rstrip()
+            l = line.split()
+            img = cv2.imread(l[0])
+            test_image_name.append(l[0])
+            img = cv2.resize(img, (IMAGE_SIZE, IMAGE_SIZE))
+            test_image.append(img.flatten().astype(np.float32)/255.0)
+            tmp = np.zeros(NUM_CLASSES)
+            tmp[int(l[1])] = 1
+            test_label.append(tmp)
+        test_image = np.asarray(test_image)
+        test_label = np.asarray(test_label)
+        test_len = len(test_image)
 
     images_placeholder = tf.placeholder("float", shape=(None, IMAGE_PIXELS))
     labels_placeholder = tf.placeholder("float", shape=(None, NUM_CLASSES))
@@ -90,6 +108,7 @@ if __name__ == '__main__':
             images_placeholder: [test_image[i]],
             keep_prob: 1.0 })[0]
         pred = np.argmax(pr)
-        print pr
-        print pred
+        # print pr
+        jpgname = test_image_name[i].lstrip("/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set")
+        print jpgname + (":" + str(pred)).rjust(30-len(jpgname), " ")
     print "finish"
