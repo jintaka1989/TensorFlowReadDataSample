@@ -1,0 +1,8 @@
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class5/imgres_8.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class5/imgres_2.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class5/imgres_6.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class5/imgres.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class5/imgres_3.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class5/imgres_5.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class5/imgres_4.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/test/class5/imgres_7.jpg 5

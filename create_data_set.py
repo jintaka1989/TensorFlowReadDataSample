@@ -1,4 +1,5 @@
 import sys
+import os
 import cv2
 import numpy as np
 import tensorflow as tf
@@ -12,14 +13,16 @@ from scipy import ndimage
 from image_data_set import ImageDataSet
 
 if __name__ == "__main__":
-    app_root_path = "/home/ya65857/tensorflow/study/TensorFlowReadDataSample/"
+    app_root_path = os.getcwd() + "/"
     ImageDataSet.create_labels(app_root_path + "data_set/train/class0", 0)
     ImageDataSet.create_labels(app_root_path + "data_set/train/class1", 1)
     ImageDataSet.create_labels(app_root_path + "data_set/train/class2", 2)
     ImageDataSet.create_labels(app_root_path + "data_set/train/class3", 3)
     ImageDataSet.create_labels(app_root_path + "data_set/train/class4", 4)
+    ImageDataSet.create_labels(app_root_path + "data_set/train/class5", 5)
     ImageDataSet.create_labels(app_root_path + "data_set/test/class0", 0)
     ImageDataSet.create_labels(app_root_path + "data_set/test/class1", 1)
     ImageDataSet.create_labels(app_root_path + "data_set/test/class2", 2)
     ImageDataSet.create_labels(app_root_path + "data_set/test/class3", 3)
     ImageDataSet.create_labels(app_root_path + "data_set/test/class4", 4)
+    ImageDataSet.create_labels(app_root_path + "data_set/test/class5", 5)

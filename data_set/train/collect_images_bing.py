@@ -15,6 +15,7 @@ import re
 import commands as cmd
 import pdb
 
+DOWNLOAD_LIMIT = 20
 
 # クエリ検索したHTMLの取得
 def get_HTML(query):
@@ -30,9 +31,7 @@ def extract_URL(html):
     sentences = html[1].split('\n')
     # ptn = re.compile('<a href="(.+\.jpg)" class="thumb"')
     ptn = re.compile('href="(.*?).jpg')
-
-
-
+    count = 0
     for sent in sentences:
         sents = sent.split('div class=')
         for s in sents:
@@ -40,8 +39,13 @@ def extract_URL(html):
             if search is None:
                 print 'Not match'
             else:
+                if count==DOWNLOAD_LIMIT:
+                    break
                 print search.group(1)
                 url.append(search.group(1)+".jpg")
+                count += 1
+        if count==DOWNLOAD_LIMIT:
+            break
 
     return url
 

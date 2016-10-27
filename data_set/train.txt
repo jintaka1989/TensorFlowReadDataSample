@@ -101,3 +101,17 @@
 /home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class4/th_16.jpg 4
 /home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class4/th_7.jpg 4
 /home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class4/th.jpg 4
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class5/Chevrolet_Camaro_RS_red_car.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class5/nissan_gt_r_red-wide.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class5/Big-Red-Car-by-Web-Designs-GURU-Mithun-B.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class5/kevindurantredcamaro1.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class5/Alfa_Romeo_TZ3_Corsa_red_car.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class5/red-car2.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class5/2013-CR-Z-EX--3-4-Driver-Side-Front-in-Milano-Red--CZD-HAD-13-008-.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class5/red+car10.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class5/Red_sports_coupe_car.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class5/motor_170.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class5/redferrari.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class5/2009-03-20_Red_car_NB_on_S_Lasalle_St_in_Durham.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class5/Red-Sports-Car-22.jpg 5
+/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set/train/class5/red-sports-car.jpg 5

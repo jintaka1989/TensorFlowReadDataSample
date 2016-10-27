@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import os
 import numpy as np
 import tensorflow as tf
 import cv2
 import tensorflow.python.platform
 from types import *
 
-NUM_CLASSES = 5
+NUM_CLASSES = 6
 IMAGE_SIZE = 28
 IMAGE_PIXELS = IMAGE_SIZE*IMAGE_SIZE*3
 
@@ -109,6 +110,6 @@ if __name__ == '__main__':
             keep_prob: 1.0 })[0]
         pred = np.argmax(pr)
         # print pr
-        jpgname = test_image_name[i].lstrip("/home/ya65857/tensorflow/study/TensorFlowReadDataSample/data_set")
+        jpgname = test_image_name[i].lstrip(os.getcwd() + "/data_set")
         print jpgname + (":" + str(pred)).rjust(30-len(jpgname), " ")
     print "finish"
