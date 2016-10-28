@@ -26,6 +26,7 @@ DOWNLOAD_LIMIT = int(inifile.get("settings", "download_limit"))
 # クエリ検索したHTMLの取得
 def get_HTML(query):
 
+    # html = cmd.getstatusoutput("wget -O - https://www.bing.com/images/search?q=" + query + "&qft=+filterui:imagesize-large&FORM=R5IR3")
     html = cmd.getstatusoutput("wget -O - https://www.bing.com/images/search?q=" + query)
 
     return html
@@ -51,6 +52,7 @@ def extract_URL(html):
                 url.append(search.group(1)+".jpg")
                 count += 1
         if count==DOWNLOAD_LIMIT:
+            print "reach the DOWNLOAD_LIMIT"
             break
 
     return url
