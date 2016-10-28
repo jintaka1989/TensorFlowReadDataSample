@@ -8,6 +8,7 @@
 # $ python collect_img.py query dir
 # query: 欲しい画像の検索ワード (e.g. leopard)
 # dir: 画像保存先ディレクトリ (./img/*)
+# wgetを使っているため、使えるのはLinuxのみ
 
 import sys
 import os
@@ -15,7 +16,12 @@ import re
 import commands as cmd
 import pdb
 
-DOWNLOAD_LIMIT = 5
+# read config.ini
+import ConfigParser
+inifile = ConfigParser.SafeConfigParser()
+inifile.read('./config.ini')
+NUM_CLASSES = int(inifile.get("settings", "num_classes"))
+DOWNLOAD_LIMIT = int(inifile.get("settings", "download_limit"))
 
 # クエリ検索したHTMLの取得
 def get_HTML(query):
