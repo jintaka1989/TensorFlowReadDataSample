@@ -5,8 +5,13 @@ import numpy as np
 import tensorflow as tf
 import tensorflow.python.platform
 
-# 画像を分類するときの分類数
-NUM_CLASSES = 6
+# read config.ini
+import ConfigParser
+inifile = ConfigParser.SafeConfigParser()
+inifile.read('./config.ini')
+NUM_CLASSES = int(inifile.get("settings", "num_classes"))
+DOWNLOAD_LIMIT = int(inifile.get("settings", "download_limit"))
+
 IMAGE_SIZE = 28
 # カラー画像だから*3？
 IMAGE_PIXELS = IMAGE_SIZE*IMAGE_SIZE*3

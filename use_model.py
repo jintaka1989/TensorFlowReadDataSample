@@ -8,7 +8,13 @@ import cv2
 import tensorflow.python.platform
 from types import *
 
-NUM_CLASSES = 6
+# read config.ini
+import ConfigParser
+inifile = ConfigParser.SafeConfigParser()
+inifile.read('./config.ini')
+NUM_CLASSES = int(inifile.get("settings", "num_classes"))
+DOWNLOAD_LIMIT = int(inifile.get("settings", "download_limit"))
+
 IMAGE_SIZE = 28
 IMAGE_PIXELS = IMAGE_SIZE*IMAGE_SIZE*3
 
