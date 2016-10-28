@@ -1,5 +1,0 @@
-/home/ya65857/tensorflow/study/ReadData/data_set/test000.jpeg 0
-/home/ya65857/tensorflow/study/ReadData/data_set/test001.jpeg 1
-/home/ya65857/tensorflow/study/ReadData/data_set/test002.jpeg 2
-/home/ya65857/tensorflow/study/ReadData/data_set/test003.jpeg 3
-/home/ya65857/tensorflow/study/ReadData/data_set/test004.jpeg 4

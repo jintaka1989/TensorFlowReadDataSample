@@ -6,9 +6,13 @@ import cv2
 import numpy as np
 import tensorflow as tf
 import tensorflow.python.platform
+# read config.ini
+import ConfigParser
+inifile = ConfigParser.SafeConfigParser()
+inifile.read('./config.ini')
+NUM_CLASSES = int(inifile.get("settings", "num_classes"))
+DOWNLOAD_LIMIT = int(inifile.get("settings", "download_limit"))
 
-# 画像を分類するときの分類数
-NUM_CLASSES = 6
 IMAGE_SIZE = 28
 # カラー画像だから*3？
 IMAGE_PIXELS = IMAGE_SIZE*IMAGE_SIZE*3
@@ -74,7 +78,22 @@ class ImageDataSet:
         for num in range(0, num_of_classes):
             ImageDataSet.create_labels(app_root_path + "data_set/test/class" + str(num), num)
 
+    @staticmethod
+    def joint_train_labels(app_root_path, num_of_classes):
+        jointed_labels = []
+        for num in range(0, num_of_classes):
+            with open(app_root_path + "data_set/train/class" + str(num) + ".txt", "r") as f:
+                jointed_labels.extend(f)
+        with open(app_root_path + "data_set/train.txt", "w") as f:
+            for labels in jointed_labels:
+                f.write(labels)
 
-    # @staticmethod
-    # def cat_labels(filepath1, filepath2):
-    #     # use cat command
+    @staticmethod
+    def joint_test_labels(app_root_path, num_of_classes):
+        jointed_labels = []
+        for num in range(0, num_of_classes):
+            with open(app_root_path + "data_set/test/class" + str(num) + ".txt", "r") as f:
+                jointed_labels.extend(f)
+        with open(app_root_path + "data_set/test.txt", "w") as f:
+            for labels in jointed_labels:
+                f.write(labels)
