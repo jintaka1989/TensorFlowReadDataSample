@@ -27,7 +27,10 @@ DOWNLOAD_LIMIT = int(inifile.get("settings", "download_limit"))
 def get_HTML(query):
 
     # html = cmd.getstatusoutput("wget -O - https://www.bing.com/images/search?q=" + query + "&qft=+filterui:imagesize-large&FORM=R5IR3")
-    html = cmd.getstatusoutput("wget -O - https://www.bing.com/images/search?q=" + query)
+
+    html = cmd.getstatusoutput("wget -O - https://www.bing.com/images/search?q=" + query + "&qft=+filterui:age-lt43200+filterui:photo-photo&FORM=R5IR22")
+
+    # html = cmd.getstatusoutput("wget -O - https://www.bing.com/images/search?q=" + query)
 
     return html
 
@@ -36,8 +39,11 @@ def extract_URL(html):
 
     url = []
     sentences = html[1].split('\n')
-    # ptn = re.compile('<a href="(.+\.jpg)" class="thumb"')
-    ptn = re.compile('href="(.*?).jpg')
+    # with open("bing_html.txt", "w") as f:
+    #     for line in sentences:
+    #         f.write(line+"\n")
+
+    ptn = re.compile('<a class="thumb" target="_blank" href="(.*?).jpg')
     count = 0
     for sent in sentences:
         sents = sent.split('div class=')
@@ -62,7 +68,7 @@ def get_IMG(dir,url):
 
     for u in url:
         try:
-            os.system("wget -P " + dir + " " + u)
+            os.system("wget -P  " + dir + " " + "–no-clobber -N "+ u)
         except:
             continue
 
