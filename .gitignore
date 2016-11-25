@@ -1,0 +1,3 @@
+# ignore jpeg because these are large
+*.jpg
+*.jpeg

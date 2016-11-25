@@ -15,7 +15,7 @@ inifile.read('./config.ini')
 NUM_CLASSES = int(inifile.get("settings", "num_classes"))
 DOWNLOAD_LIMIT = int(inifile.get("settings", "download_limit"))
 
-IMAGE_SIZE = 28
+IMAGE_SIZE = int(inifile.get("settings", "image_size"))
 IMAGE_PIXELS = IMAGE_SIZE*IMAGE_SIZE*3
 
 flags = tf.app.flags
@@ -64,9 +64,9 @@ def inference(images_placeholder, keep_prob):
         h_pool2 = max_pool_2x2(h_conv2)
 
     with tf.name_scope('fc1') as scope:
-        W_fc1 = weight_variable([7*7*64, 1024])
+        W_fc1 = weight_variable([(IMAGE_SIZE/4)*(IMAGE_SIZE/4)*64, 1024])
         b_fc1 = bias_variable([1024])
-        h_pool2_flat = tf.reshape(h_pool2, [-1, 7*7*64])
+        h_pool2_flat = tf.reshape(h_pool2, [-1, (IMAGE_SIZE/4)*(IMAGE_SIZE/4)*64])
         h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
         h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
 
@@ -109,6 +109,22 @@ if __name__ == '__main__':
     saver = tf.train.Saver()
     sess.run(tf.initialize_all_variables())
     saver.restore(sess,FLAGS.readmodels)
+
+    if test_len % FLAGS.batch_size is 0:
+        test_batch = test_len/FLAGS.batch_size
+    else:
+        test_batch = (test_len/FLAGS.batch_size)+1
+        print "test_batch = "+str(test_batch)
+
+    # for i in range(test_batch):
+    #     batch = FLAGS.batch_size*i
+    #     batch_plus = FLAGS.batch_size*(i+1)
+    #     pr = logits.eval(feed_dict={
+    #             images_placeholder: test_image[batch:batch_plus]})
+    #     pred = np.argmax(pr)
+    #     # print pr
+    #     jpgname = test_image_name[i].lstrip(os.getcwd() + "/data_set")
+    #     print jpgname + (":" + str(pred)).rjust(30-len(jpgname), " ")
 
     for i in range(len(test_image)):
         pr = logits.eval(feed_dict={

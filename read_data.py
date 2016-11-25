@@ -12,7 +12,7 @@ inifile.read('./config.ini')
 NUM_CLASSES = int(inifile.get("settings", "num_classes"))
 DOWNLOAD_LIMIT = int(inifile.get("settings", "download_limit"))
 
-IMAGE_SIZE = 28
+IMAGE_SIZE = int(inifile.get("settings", "image_size"))
 # カラー画像だから*3？
 IMAGE_PIXELS = IMAGE_SIZE*IMAGE_SIZE*3
 
@@ -51,7 +51,7 @@ def inference(images_placeholder, keep_prob):
     def max_pool_2x2(x):
       return tf.nn.max_pool(x, ksize=[1, 2, 2, 1],
                             strides=[1, 2, 2, 1], padding='SAME')
-    # 入力を28x28x3に変形
+    # 入力をIMAGE_SIZExIMAGE_SIZEx3に変形
     x_images = tf.reshape(images_placeholder, [-1, IMAGE_SIZE, IMAGE_SIZE, 3])
     # 畳み込み層1の作成
     with tf.name_scope('conv1') as scope:
@@ -71,9 +71,9 @@ def inference(images_placeholder, keep_prob):
         h_pool2 = max_pool_2x2(h_conv2)
     # 全結合層1の作成
     with tf.name_scope('fc1') as scope:
-        W_fc1 = weight_variable([7*7*64, 1024])
+        W_fc1 = weight_variable([(IMAGE_SIZE/4)*(IMAGE_SIZE/4)*64, 1024])
         b_fc1 = bias_variable([1024])
-        h_pool2_flat = tf.reshape(h_pool2, [-1, 7*7*64])
+        h_pool2_flat = tf.reshape(h_pool2, [-1, (IMAGE_SIZE/4)*(IMAGE_SIZE/4)*64])
         h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
         # dropoutの設定
         h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
